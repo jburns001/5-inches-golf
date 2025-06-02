@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #333;
+}
+header {
+  background: #222;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+header .button {
+  background: darkorange;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+main {
+  padding: 2rem;
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.features div {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
