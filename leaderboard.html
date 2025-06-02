@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leaderboard - 5 Inches Golf</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Live Leaderboard</h1>
+    <p>Scores update automatically from submitted data.</p>
+  </header>
+  <main>
+    <table id="leaderboard" border="1" style="width:100%; text-align:left;">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Round Number</th>
+          <th>Score</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbxqCb2fYnonA6UmDZ4hACjbSW9ySOrJ2ZgKkXYcleNJzx1zU9LHOrT7JBCjKtRZMCrM7w/exec")
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector("#leaderboard tbody");
+        data.forEach(entry => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${entry["Player Name"]}</td>
+            <td>${entry["Round Number"]}</td>
+            <td>${entry["Score"]}</td>
+            <td>${entry["Notes"]}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>
